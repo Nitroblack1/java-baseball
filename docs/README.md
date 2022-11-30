@@ -2,12 +2,12 @@
 
 > ## Domain Logic
 ### Application
-- [ ] game 을 trigger 한다.
+- [x] game 을 trigger 한다.
 - [ ] 유저의 입력을 받아 game 에 전달한다.
 - [ ] game 의 아웃풋을 유저에게 출력한다.
 
 ### Baseball
-- [ ] 랜덤으로 정답을 추출한다.
+- [x] 랜덤으로 정답을 추출하여 Referee에게 전달한다.
 - [ ] 유저의 입력을 받아 Referee 로 전달한다.
 - [ ] 게임의 현 상황에 대한 status 를 피드백한다.
 
