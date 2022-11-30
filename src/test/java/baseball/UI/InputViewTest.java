@@ -24,18 +24,18 @@ public class InputViewTest {
         @DisplayName("올바른 숫자 입력 테스트")
         @Test
         void wrightNumberInputTest() {
-            String testCase = "123";
-            InputStream in = new ByteArrayInputStream(testCase.getBytes());
+            String userInput = "123";
+            InputStream in = new ByteArrayInputStream(userInput.getBytes());
             System.setIn(in);
 
-            assertThat(inputView.getNumbers()).isEqualTo(testCase);
+            assertThat(inputView.getNumbers()).isEqualTo(userInput);
         }
 
         @DisplayName("예외 상황 테스트")
         @ParameterizedTest
         @ValueSource(strings = {"114", "fw7"})
-        void wrongNumberInputTest(String testCase) {
-            InputStream in = new ByteArrayInputStream(testCase.getBytes());
+        void wrongNumberInputTest(String userInput) {
+            InputStream in = new ByteArrayInputStream(userInput.getBytes());
             System.setIn(in);
 
             assertThatThrownBy(() -> inputView.getNumbers())
@@ -62,7 +62,7 @@ public class InputViewTest {
         @ParameterizedTest
         @ValueSource(strings = {"3", "rr"})
         void wrongIntentionTest(String userInput) {
-            InputStream in = new ByteArrayInputStream(testCase.getBytes());
+            InputStream in = new ByteArrayInputStream(userInput.getBytes());
             System.setIn(in);
 
             assertThatThrownBy(() -> inputView.getIntention())
