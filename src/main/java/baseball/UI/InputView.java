@@ -3,6 +3,7 @@ package baseball.UI;
 import static camp.nextstep.edu.missionutils.Console.readLine;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public class InputView {
 
@@ -22,5 +23,16 @@ public class InputView {
         }
     }
 
+    public  String getIntention() throws IllegalArgumentException {
+        System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
+        String userInput = readLine();
+        validateIntention(userInput);
+        return userInput;
+    }
 
+    private void validateIntention(String userInput) {
+        if (!(userInput.equals("1") || userInput.equals("2"))) {
+            throw new IllegalArgumentException("1이나 2를 입력하세요.");
+        }
+    }
 }

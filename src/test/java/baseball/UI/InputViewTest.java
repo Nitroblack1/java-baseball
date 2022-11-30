@@ -55,7 +55,7 @@ public class InputViewTest {
             InputStream in = new ByteArrayInputStream(userInput.getBytes());
             System.setIn(in);
 
-            assertThat(inputView.getIntention()).isEqualto(userInput);
+            assertThat(inputView.getIntention()).isEqualTo(userInput);
         }
 
         @DisplayName("예외 상황 테스트")
