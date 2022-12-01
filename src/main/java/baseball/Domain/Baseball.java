@@ -15,8 +15,11 @@ public class Baseball {
     Baseball() {
         System.out.println("숫자 야구 게임을 시작합니다.");
         referee = new Referee();
-        referee.generateAnswer();
         gameStatus = status.PROGRESSING;
+    }
+
+    public void generateAnswer() {
+        referee.generateAnswer();
     }
 
     public void passUserInputAndGetResult(String userInput) {
@@ -33,6 +36,10 @@ public class Baseball {
         if (Objects.equals(userInput, "2")) {
             gameStatus = status.QUIT;
         }
+    }
+
+    public void restartGame() {
+        gameStatus = status.PROGRESSING;
     }
 
     public status getGameStatus() {
