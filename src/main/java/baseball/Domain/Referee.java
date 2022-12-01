@@ -18,7 +18,6 @@ public class Referee implements RandomAnswer {
                 answer.add(randomNumber);
             }
         }
-        System.out.println(answer);
     }
 
     public List<Integer> getAnswer() {
